@@ -11,6 +11,7 @@ export const Focus = ({ addSubject }) => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <TextInput
+          autoComplete={false}
           label="What would you like to focus on ?"
           onChangeText={setSubject}
           style={styles.textInput}
