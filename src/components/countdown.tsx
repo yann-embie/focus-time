@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { Text, View, StyleSheet } from "react-native"
+import { Text, StyleSheet } from "react-native"
 
 import { fontSizes, spacing } from "../utils/sizes"
 import { colors } from "../utils/colors"
@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
   text: {
     fontSize: fontSizes.xxxl,
     fontWeight: "bold",
-    color: colors.primary,
+    color: colors.toDefine2,
     padding: spacing.lg,
-    backgroundColor: "rgba(94, 132, 226, 0.3)",
+    backgroundColor: colors.primary,
   },
 })

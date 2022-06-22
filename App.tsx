@@ -7,13 +7,13 @@ import { Timer } from "./src/features/timer"
 export default function App() {
   const [currentSubject, setCurrentSubject] = useState(null)
 
-  // {currentSubject ? (
-  // ) : (
-  //   <Focus addSubject={setCurrentSubject} />
-  // )}
   return (
     <SafeAreaView style={styles.container}>
-      <Timer focusSubject={currentSubject} onTimerEnd={() => {}} clearSubject={() => {}} />
+      {currentSubject ? (
+        <Timer focusSubject={currentSubject} onTimerEnd={() => {}} clearSubject={() => {}} />
+      ) : (
+        <Focus addSubject={setCurrentSubject} />
+      )}
     </SafeAreaView>
   )
 }
@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-    backgroundColor: colors.primary,
+    backgroundColor: colors.secondary,
   },
-  text: { color: colors.toDefine2 },
 })
