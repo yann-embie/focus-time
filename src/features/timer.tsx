@@ -10,13 +10,7 @@ import { Timing } from "./timing"
 
 const ONE_SECOND_IN_MS = 1000
 
-const PATTERN = [
-  1 * ONE_SECOND_IN_MS,
-  2 * ONE_SECOND_IN_MS,
-  3 * ONE_SECOND_IN_MS,
-  4 * ONE_SECOND_IN_MS,
-  5 * ONE_SECOND_IN_MS,
-]
+const PATTERN = [1 * ONE_SECOND_IN_MS]
 
 export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
   useKeepAwake()
@@ -29,6 +23,7 @@ export const Timer = ({ focusSubject, onTimerEnd, clearSubject }) => {
     setIsStarted(false)
     setProgress(1)
     reset()
+    onTimerEnd(focusSubject)
   }
 
   return (
